@@ -270,7 +270,7 @@ user_pref("layout.word_select.eat_space_to_next_word", false); // Don't select t
 user_pref("browser.backspace_action", 0); // restore/enable backspace to return to previous page
 user_pref("browser.translations.enable", false); // disable "translate this page" that appears when foreign language is detected
 user_pref("browser.warnOnQuit", true);
-user_pref("browser.tabs.warnOnClose", true); // ask for confirmation when closing a window with multiple tabs
+user_pref("browser.tabs.warnOnClose", false); // ask for confirmation when closing a window with multiple tabs
 user_pref("browser.tabs.closeWindowWithLastTab", false); // don't close the window when closing the last tab
 user_pref("browser.urlbar.openViewOnFocus", false); // Disable address bar popping out
 user_pref("browser.dataFeatureRecommendations.enabled", false);
@@ -288,6 +288,19 @@ user_pref("mousewheel.default.delta_multiplier_y", 150);
 user_pref("network.http.rcwn.enabled", false);
 user_pref("ui.key.menuAccessKeyFocuses", false);
 user_pref("widget.gtk.hide-pointer-while-typing.enabled", false);
+user_pref("media.hardwaremediakeys.enabled", false);
+user_pref("gfx.color_management.mode", 1);
+user_pref("browser.urlbar.suggest.*", false);
+user_pref("general.smoothScroll.msdPhysics.enabled", true);
+user_pref("security.dialog_enable_delay", 0);
+user_pref("dom.animations.offscreen-throttling", false);
+user_pref("media.block-autoplay-until-in-foreground", false);
+user_pref("extensions.screenshots.disabled", true);
+user_pref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
+user_pref("narrate.enabled", false);
+user_pref("findbar.modalHighlight", true);
+
+
 /****************************************************************************
  * SECTION: SMOOTHFOX                                                       *
 ****************************************************************************/
