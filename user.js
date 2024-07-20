@@ -262,8 +262,8 @@ user_pref("full-screen-api.transition.timeout", 0);
 user_pref("browser.pagethumbnails.capturing_disabled", true);
 user_pref("pageThumbs.enabled", false);
 user_pref("browser.shell.shortcutFavicons", false);
-user_pref("media.block-autoplay-until-in-foreground", false);
-user_pref("media.block-play-until-visible", false);
+user_pref("media.block-autoplay-until-in-foreground", true);
+user_pref("media.block-play-until-visible", true);
 user_pref("image.mem.decode_bytes_at_a_time", 65536); // The speed of processing images
 user_pref("image.http.accept", "*/*"); // remove webp as the default image format. Default = "image/webp,*/*"
 user_pref("layout.word_select.eat_space_to_next_word", false); // Don't select the space next to a word when selecting a word
@@ -291,13 +291,12 @@ user_pref("widget.gtk.hide-pointer-while-typing.enabled", false);
 user_pref("media.hardwaremediakeys.enabled", false);
 user_pref("gfx.color_management.mode", 1);
 user_pref("browser.urlbar.suggest.*", false);
-user_pref("general.smoothScroll.msdPhysics.enabled", true);
 user_pref("security.dialog_enable_delay", 0);
 user_pref("dom.animations.offscreen-throttling", false);
-user_pref("media.block-autoplay-until-in-foreground", false);
 user_pref("extensions.screenshots.disabled", true);
-user_pref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
+user_pref("media.videocontrols.picture-in-picture.video-toggle.always-show", false);
 user_pref("narrate.enabled", false);
+user_pref("reader.parse-on-load.enabled", false);
 user_pref("findbar.modalHighlight", true);
 
 
