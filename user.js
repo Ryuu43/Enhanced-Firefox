@@ -298,6 +298,10 @@ user_pref("media.videocontrols.picture-in-picture.video-toggle.always-show", fal
 user_pref("narrate.enabled", false);
 user_pref("reader.parse-on-load.enabled", false);
 user_pref("findbar.modalHighlight", true);
+user_pref("animatedFox.centeredTabs", true);
+user_pref("animatedFox.centeredUrl", true);
+user_pref("animatedFox.showTabCloseButton", true);
+user_pref("animatedFox.centeredUrl", true);
 
 
 /****************************************************************************
