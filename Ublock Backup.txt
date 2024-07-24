@@ -1,5 +1,5 @@
 {
-  "timeStamp": 1721665813094,
+  "timeStamp": 1721808241714,
   "version": "1.58.0",
   "userSettings": {
     "externalLists": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/BrowseWebsitesWithoutLoggingIn.txt\nhttps://raw.githubusercontent.com/DandelionSprout/adfilt/master/TwitchEvenMorePureViewingExperience.txt\nhttps://raw.githubusercontent.com/Hunter-Github/the-best-stack-overflow/master/se_filters.txt\nhttps://raw.githubusercontent.com/PoorPocketsMcNewHold/steamscamsites/master/steamscamsite.txt\nhttps://raw.githubusercontent.com/Yhonay/antipopads/master/popads.txt\nhttps://raw.githubusercontent.com/bigdargon/hostsVN/master/hosts\nhttps://raw.githubusercontent.com/sepehrkiller/FixYoutubeUI/main/FixYoutubeUI.txt\nhttps://raw.githubusercontent.com/yokoffing/filterlists/main/block_third_party_fonts.txt\nhttps://raw.githubusercontent.com/yokoffing/filterlists/main/youtube_clear_view.txt",
