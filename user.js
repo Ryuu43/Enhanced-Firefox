@@ -81,7 +81,7 @@ user_pref("security.tls.enable_0rtt_data", false);
 
 /** DISK AVOIDANCE ***/
 user_pref("browser.privatebrowsing.forceMediaMemoryCache", true);
-user_pref("browser.sessionstore.interval", 120000);
+user_pref("browser.sessionstore.interval", 60000);
 
 /** SHUTDOWN & SANITIZING ***/
 user_pref("privacy.history.custom", true);
@@ -234,86 +234,15 @@ user_pref("layout.word_select.eat_space_to_next_word", false);
 // visit https://github.com/yokoffing/Betterfox/wiki/Common-Overrides
 // visit https://github.com/yokoffing/Betterfox/wiki/Optional-Hardening
 // Enter your personal overrides below this line:
-user_pref("browser.tabs.tabMinWidth", 0);
-user_pref("browser.tabs.tabClipWidth", 999);
-user_pref("browser.cache.disk.enable", false);
-user_pref("browser.cache.memory.enable", true);
-user_pref("image.mem.surfacecache.max_size_kb", 500000); // <500MB, default=2GB. A cache for decoded images (based on the name and other related settings which can be found on https://searchfox.org)
-user_pref("browser.sessionstore.interval", 1000000); // (in milliseconds) default=15000=15sec, 300000=5min, 1000000=16min
-user_pref("browser.sessionhistory.max_total_viewers", 0);
-user_pref("network.buffer.cache.size", 262144); // in bytes. 262144=256KB (You can also try 524288 [=512KB] to see if it works even better) / "the stream buffer segment size used for most network activity." (http://forums.mozillazine.org/viewtopic.php?f=7&t=2416193) / "the default setting is 32 kB, and that corresponds with the buffer size of very old TCP/IP stacks." (https://www.mail-archive.com/support-seamonkey@lists.mozilla.org/msg74561.html) (note "buffer.cache"="segment" https://bugzilla.mozilla.org/show_bug.cgi?id=715770#c1)
-user_pref("network.buffer.cache.count", 128); // https://www.mail-archive.com/support-seamonkey@lists.mozilla.org/msg74561.html
-user_pref("network.http.max-connections", 1800); // default=900
-user_pref("network.http.max-connections-per-server", 32); // This setting might not be used anymore - there's no result for it in https://searchfox.com (the last default might have been 15 as per https://kb.mozillazine.org/Network.http.max-connections-per-server)
-user_pref("network.http.max-persistent-connections-per-server", 12); // default=6
-user_pref("network.http.max-urgent-start-excessive-connections-per-host", 6); // default=3. "Number of connections that we can open beyond the standard parallelism limit defined by max-persistent-connections-per-server/-proxy to handle urgent-start marked requests"
-user_pref("network.http.pacing.requests.burst", 16); // default=10. Controls how many HTTP requests are sent at once
-user_pref("network.http.pacing.requests.min-parallelism", 8); // default=6. "Min-Parallelism is the amount of active connections that have to be in use in order for the rate limiter to be used" (https://bugzilla.mozilla.org/show_bug.cgi?id=819734#c1)
-user_pref("network.websocket.max-connections", 256); // You can also try 400. default=200. "WebSockets is an advanced technology that makes it possible to open an interactive communication session between the user's browser and a server. With this API, you can send messages to a server and receive event-driven responses without having to poll the server for a reply." (https://devdoc.net/web/developer.mozilla.org/en-US/docs/WebSockets.html / https://portswigger.net/web-security/websockets/what-are-websockets)
-user_pref("network.ssl_tokens_cache_capacity", 32768);
-user_pref("browser.link.open_newwindow.restriction", 0); // 0 = apply the setting under "browser.link.open_newwindow" to ALL new windows (even script windows with features)
-user_pref("browser.link.open_newwindow.override.external", 3); // 3 = open external links (from outside Firefox) in a new tab
-user_pref("browser.tabs.insertAfterCurrent", true);
-user_pref("browser.tabs.loadBookmarksInTabs", true);
-user_pref("browser.urlbar.openintab", true);
-user_pref("ui.prefersReducedMotion", 1);
-user_pref("toolkit.cosmeticAnimations.enabled", false);
-user_pref("full-screen-api.transition.timeout", 0);
-user_pref("browser.pagethumbnails.capturing_disabled", true);
-user_pref("pageThumbs.enabled", false);
-user_pref("browser.shell.shortcutFavicons", false);
-user_pref("media.block-autoplay-until-in-foreground", true);
-user_pref("media.block-play-until-visible", true);
-user_pref("image.mem.decode_bytes_at_a_time", 65536); // The speed of processing images
-user_pref("image.http.accept", "*/*"); // remove webp as the default image format. Default = "image/webp,*/*"
-user_pref("layout.word_select.eat_space_to_next_word", false); // Don't select the space next to a word when selecting a word
-user_pref("browser.backspace_action", 0); // restore/enable backspace to return to previous page
-user_pref("browser.translations.enable", false); // disable "translate this page" that appears when foreign language is detected
-user_pref("browser.warnOnQuit", true);
-user_pref("browser.tabs.warnOnClose", false); // ask for confirmation when closing a window with multiple tabs
-user_pref("browser.tabs.closeWindowWithLastTab", false); // don't close the window when closing the last tab
-user_pref("browser.urlbar.openViewOnFocus", false); // Disable address bar popping out
-user_pref("browser.dataFeatureRecommendations.enabled", false);
-user_pref("browser.vpn_promo.enabled", false);
-user_pref("browser.newtabpage.activity-stream.feeds.recommendationprovider", false);
-user_pref("extensions.htmlaboutaddons.recommendations.enabled", false);
-user_pref("gfx.font_rendering.cleartype_params.rendering_mode", 5);
-user_pref("gfx.font_rendering.cleartype_params.force_gdi_classic_for_families", );
-user_pref("gfx.font_rendering.cleartype_params.force_gdi_classic_max_size", 0);
-user_pref("gfx.font_rendering.cleartype_params.cleartype_level", 0);
-user_pref("pdfjs.forcePageColors", true);
-user_pref("pdfjs.pageColorsBackground", #202020);
-user_pref("pdfjs.pageColorsForeground", #d1d1d1);
-user_pref("mousewheel.default.delta_multiplier_y", 150);
-user_pref("network.http.rcwn.enabled", false);
-user_pref("ui.key.menuAccessKeyFocuses", false);
-user_pref("widget.gtk.hide-pointer-while-typing.enabled", false);
-user_pref("media.hardwaremediakeys.enabled", false);
-user_pref("gfx.color_management.mode", 1);
-user_pref("browser.urlbar.suggest.*", false);
-user_pref("security.dialog_enable_delay", 0);
-user_pref("dom.animations.offscreen-throttling", false);
-user_pref("extensions.screenshots.disabled", true);
-user_pref("media.videocontrols.picture-in-picture.video-toggle.always-show", false);
-user_pref("narrate.enabled", false);
-user_pref("reader.parse-on-load.enabled", false);
-user_pref("findbar.modalHighlight", true);
 user_pref("animatedFox.centeredTabs", true);
 user_pref("animatedFox.centeredUrl", true);
 user_pref("animatedFox.showTabCloseButton", true);
 user_pref("animatedFox.centeredUrl", true);
-
-
 /****************************************************************************
  * SECTION: SMOOTHFOX                                                       *
 ****************************************************************************/
 // visit https://github.com/yokoffing/Betterfox/blob/main/Smoothfox.js
 // Enter your scrolling overrides below this line:
-user_pref("general.smoothScroll.currentVelocityWeighting", 0);
-user_pref("general.smoothScroll.mouseWheel.durationMaxMS", 150);
-user_pref("general.smoothScroll.stopDecelerationWeighting", 0.82);
-user_pref("mousewheel.min_line_scroll_amount", 25);
-
 
 /****************************************************************************
  * END: BETTERFOX                                                           *
