@@ -1,11 +1,166 @@
-//
-/* You may copy+paste this file and use it as it is.
- *
- * If you make changes to your about:config while the program is running, the
- * changes will be overwritten by the user.js when the application restarts.
- *
- * To make lasting changes to preferences, you will have to edit the user.js.
- */
+/******
+*    name: Firefox Max Speed UserJS
+* version: 115+
+*    urls: https://github.com/FirefoxUniverse/FirefoxTweaksVN/main/user.js [repo]
+* license: MIT
+* HOWTO: Go to about:support -> Open Profile Folder -> Save user.js -> Restart (https://voz.vn/goto/post?id=27527209)
+* REVERT: https://voz.vn/goto/post?id=27496381
+******/
+
+//Tweaks
+//Instant start-up
+user_pref("browser.startup.preXulSkeletonUI", false);
+
+//Snappier tooltips
+user_pref("ui.tooltip.delay_ms", 60);
+user_pref("ui.tooltipDelay", 60);
+user_pref("ui.submenuDelay", 0);
+user_pref("browser.overlink-delay", 10);
+
+//Enable Alt-Tab-like switch, Ctrl+Tab
+user_pref("browser.ctrlTab.sortByRecentlyUsed", true);
+
+//Enable userChrome.css
+user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
+
+//Enable Ctrl+Shift+Alt+I
+user_pref("devtools.chrome.enabled", true);
+user_pref("devtools.debugger.remote-enabled", true);
+user_pref("devtools.debugger.prompt-connection", false);
+
+// Reduce disk read/write
+user_pref("browser.sessionstore.idleDelay", 180);
+user_pref("browser.sessionstore.interval", 3600000);
+//user_pref("browser.sessionstore.collect_zoom", false);
+//user_pref("browser.sessionstore.privacy_level", 2);
+user_pref("browser.sessionstore.restore_pinned_tabs_on_demand", true);
+//user_pref("browser.sessionhistory.max_total_viewers", 0);
+
+// Disable Pocket and Accessibility
+user_pref("extensions.pocket.enabled", false);
+user_pref("accessibility.force_disabled", 1);
+
+// Disable Taskbar Preview
+user_pref("browser.taskbar.lists.enabled", false);
+user_pref("browser.taskbar.lists.frequent.enabled", false);
+user_pref("browser.taskbar.lists.maxListItemCount", 0);
+//user_pref("browser.taskbar.lists.refreshInSeconds", 2147483647);
+user_pref("browser.taskbar.lists.tasks.enabled", false);
+user_pref("browser.taskbar.previews.max", 0);
+
+// Optimize rendering speed
+// https://voz.vn/t/tong-hop-nhung-addon-chat-cho-firefox-pc-mobile.682181/post-23570551
+// https://voz.vn/t/tong-hop-nhung-addon-chat-cho-firefox-pc-mobile.682181/post-27064564
+user_pref("nglayout.initialpaint.delay", 250);
+user_pref("nglayout.initialpaint.delay_in_oopif", 250);
+//user_pref("content.notify.backoffcount", 0);
+//user_pref("content.notify.interval", 2000000);
+//user_pref("content.notify.ontimer", true);
+
+// Enable punycode
+// https://voz.vn/t/tong-hop-nhung-addon-chat-cho-firefox-pc-mobile.682181/post-25938099
+user_pref("network.IDN_show_punycode", true);
+
+// Prefer no animation
+// https://voz.vn/p/33057189/
+user_pref("ui.prefersReducedMotion", 1);
+
+// Maximize bandwidth
+// https://voz.vn/p/33049233/
+user_pref("network.http.http3.cc_algorithm", 0);
+
+// Tweak bytecode
+// https://voz.vn/p/32603773/
+user_pref("browser.cache.jsbc_compression_level", 2);
+user_pref("dom.script_loader.bytecode_cache.strategy", -1);
+//user_pref("javascript.options.mem.gc_balanced_heap_limits", true);
+
+// Enable old clear history dialog
+user_pref("privacy.sanitize.useOldClearHistoryDialog", true);
+
+// Disable IPv6
+user_pref("network.dns.disableIPv6", true);
+
+// GoogleDNS
+// https://voz.vn/t/tong-hop-nhung-addon-chat-cho-firefox-pc-mobile.682181/post-24688026
+//user_pref("network.trr.uri", "https://dns.nextdns.io/");
+//user_pref("network.trr.custom_uri", "https://dns.nextdns.io/");
+//user_pref("network.trr.mode", 2);
+
+// Enable ECS
+//user_pref("network.trr.disable-ECS", false);
+
+// Enable Kyber to access blocked websites
+user_pref("security.tls.enable_kyber", true);
+
+// Reduce network request
+// https://voz.vn/t/tong-hop-nhung-addon-chat-cho-firefox-pc-mobile.682181/post-27409530
+user_pref("network.http.rcwn.enabled", false);
+
+// Fix Facebook time (ESR <= 115)
+user_pref("dom.textMetrics.fontBoundingBox.enabled", true);
+
+// PREF: disable EcoQoS [WINDOWS] 
+// Background tab processes use efficiency mode on Windows 11 to limit resource use. 
+// [WARNING] Leave this alone, unless you're on Desktop and you rely on 
+// background tabs to have maximum performance. 
+// [1] https://devblogs.microsoft.com/performance-diagnostics/introducing-ecoqos/ 
+// [2] https://bugzilla.mozilla.org/show_bug.cgi?id=1796525 
+// [3] https://bugzilla.mozilla.org/show_bug.cgi?id=1800412 
+// [4] https://reddit.com/r/firefox/comments/107fj69/how_can_i_disable_the_efficiency_mode_on_firefox/ 
+user_pref("dom.ipc.processPriorityManager.backgroundUsesEcoQoS", false);
+
+// PREF: use bigger packets
+// Reduce Firefox's CPU usage by requiring fewer application-to-driver data transfers.
+// However, it does not affect the actual packet sizes transmitted over the network.
+// [1] https://www.mail-archive.com/support-seamonkey@lists.mozilla.org/msg74561.html
+// Can cause crashing: https://github.com/BrowserWorks/Waterfox/releases/tag/G6.0.10
+user_pref("network.buffer.cache.size", 32768); // 256 kb; default=32768 (32 kb)
+user_pref("network.buffer.cache.count", 24); // default=24
+
+// Enable Add Search
+user_pref("browser.urlbar.update2.engineAliasRefresh", true);
+
+// Enable Sleeping Tab
+user_pref("floorp.tabsleep.enabled", true);
+user_pref("floorp.tabsleep.tabTimeoutMinutes", 6);
+
+// Enable PWA
+user_pref("browser.ssb.enabled", true);
+
+// Force RAM cache, uncomment // to enable
+// https://voz.vn/t/cach-ep-firefox-luu-cache-tren-ram-ma-khong-can-ramdisk.664955/
+user_pref("browser.cache.disk.enable", false);
+user_pref("browser.cache.memory.enable", true);
+user_pref("browser.cache.memory.capacity", 524288);
+user_pref("browser.cache.memory.max_entry_size", 512000);
+
+// Disable FastBack to save RAM
+//user_pref("fission.bfcacheInParent", false);
+//user_pref("fission.disableSessionHistoryInParent", true);
+//user_pref("browser.sessionhistory.max_total_viewers", 0);
+
+// Enable Multi-Account Container
+user_pref("privacy.userContext.enabled", true); //enable Multi-Account Container
+user_pref("privacy.userContext.ui.enabled", true); //enable Multi-Account Container
+
+// Enable Cookie Banner Protection
+//user_pref("cookiebanners.service.mode", 2);
+//user_pref("cookiebanners.service.mode.privateBrowsing", 2);
+
+// Disable Restricted Domains
+user_pref("extensions.webextensions.restrictedDomains", "");
+
+// No Animation Fullscreen
+user_pref("browser.fullscreen.animate", true);
+user_pref("full-screen-api.transition-duration.enter", "0 0");
+user_pref("full-screen-api.transition-duration.leave", "0 0");
+
+// Modal-less mpv:// handler
+user_pref("network.protocol-handler.external.mpv", true);
+
+/** Image Decode Buffer Size ***/
+user_pref("image.mem.decode_bytes_at_a_time", 32768);
 
 /****************************************************************************
  * Betterfox                                                                *
@@ -17,122 +172,6 @@
 /****************************************************************************
  * SECTION: FASTFOX                                                         *
 ****************************************************************************/
-/** GENERAL ***/
-user_pref("content.notify.interval", 100000);
-
-/** GFX ***/
-user_pref("gfx.canvas.accelerated.cache-items", 4096);
-user_pref("gfx.canvas.accelerated.cache-size", 512);
-user_pref("gfx.content.skia-font-cache-size", 20);
-
-/** DISK CACHE ***/
-user_pref("browser.cache.jsbc_compression_level", 3);
-
-/** MEDIA CACHE ***/
-user_pref("media.memory_cache_max_size", 65536);
-user_pref("media.cache_readahead_limit", 7200);
-user_pref("media.cache_resume_threshold", 3600);
-
-/** IMAGE CACHE ***/
-user_pref("image.mem.decode_bytes_at_a_time", 32768);
-
-/** NETWORK ***/
-user_pref("network.http.max-connections", 1800);
-user_pref("network.http.max-persistent-connections-per-server", 10);
-user_pref("network.http.max-urgent-start-excessive-connections-per-host", 5);
-user_pref("network.http.pacing.requests.enabled", false);
-user_pref("network.dnsCacheExpiration", 3600);
-user_pref("network.ssl_tokens_cache_capacity", 10240);
-
-/** SPECULATIVE LOADING ***/
-user_pref("network.dns.disablePrefetch", true);
-user_pref("network.dns.disablePrefetchFromHTTPS", true);
-user_pref("network.prefetch-next", false);
-user_pref("network.predictor.enabled", false);
-user_pref("network.predictor.enable-prefetch", false);
-
-/** EXPERIMENTAL ***/
-user_pref("layout.css.grid-template-masonry-value.enabled", true);
-user_pref("dom.enable_web_task_scheduling", true);
-user_pref("dom.security.sanitizer.enabled", true);
-
-/****************************************************************************
- * SECTION: SECUREFOX                                                       *
-****************************************************************************/
-/** TRACKING PROTECTION ***/
-user_pref("browser.contentblocking.category", "strict");
-user_pref("urlclassifier.trackingSkipURLs", "*.reddit.com, *.twitter.com, *.twimg.com, *.tiktok.com");
-user_pref("urlclassifier.features.socialtracking.skipURLs", "*.instagram.com, *.twitter.com, *.twimg.com");
-user_pref("network.cookie.sameSite.noneRequiresSecure", true);
-user_pref("browser.download.start_downloads_in_tmp_dir", true);
-user_pref("browser.helperApps.deleteTempFileOnExit", true);
-user_pref("browser.uitour.enabled", false);
-user_pref("privacy.globalprivacycontrol.enabled", true);
-
-/** OCSP & CERTS / HPKP ***/
-user_pref("security.OCSP.enabled", 0);
-user_pref("security.remote_settings.crlite_filters.enabled", true);
-user_pref("security.pki.crlite_mode", 2);
-
-/** SSL / TLS ***/
-user_pref("security.ssl.treat_unsafe_negotiation_as_broken", true);
-user_pref("browser.xul.error_pages.expert_bad_cert", true);
-user_pref("security.tls.enable_0rtt_data", false);
-
-/** DISK AVOIDANCE ***/
-user_pref("browser.privatebrowsing.forceMediaMemoryCache", true);
-user_pref("browser.sessionstore.interval", 60000);
-
-/** SHUTDOWN & SANITIZING ***/
-user_pref("privacy.history.custom", true);
-
-/** SEARCH / URL BAR ***/
-user_pref("browser.urlbar.trimHttps", true);
-user_pref("browser.search.separatePrivateDefault.ui.enabled", true);
-user_pref("browser.urlbar.update2.engineAliasRefresh", true);
-user_pref("browser.search.suggest.enabled", false);
-user_pref("browser.urlbar.quicksuggest.enabled", false);
-user_pref("browser.urlbar.suggest.quicksuggest.sponsored", false);
-user_pref("browser.urlbar.suggest.quicksuggest.nonsponsored", false);
-user_pref("browser.urlbar.groupLabels.enabled", false);
-user_pref("browser.formfill.enable", false);
-user_pref("security.insecure_connection_text.enabled", true);
-user_pref("security.insecure_connection_text.pbmode.enabled", true);
-user_pref("network.IDN_show_punycode", true);
-
-/** HTTPS-FIRST POLICY ***/
-user_pref("dom.security.https_first", true);
-user_pref("dom.security.https_first_schemeless", true);
-
-/** PASSWORDS ***/
-user_pref("signon.formlessCapture.enabled", false);
-user_pref("signon.privateBrowsingCapture.enabled", false);
-user_pref("network.auth.subresource-http-auth-allow", 1);
-user_pref("editor.truncate_user_pastes", false);
-
-/** MIXED CONTENT + CROSS-SITE ***/
-user_pref("security.mixed_content.block_display_content", true);
-user_pref("pdfjs.enableScripting", false);
-user_pref("extensions.postDownloadThirdPartyPrompt", false);
-
-/** HEADERS / REFERERS ***/
-user_pref("network.http.referer.XOriginTrimmingPolicy", 2);
-
-/** CONTAINERS ***/
-user_pref("privacy.userContext.ui.enabled", true);
-
-/** WEBRTC ***/
-user_pref("media.peerconnection.ice.proxy_only_if_behind_proxy", true);
-user_pref("media.peerconnection.ice.default_address_only", true);
-
-/** SAFE BROWSING ***/
-user_pref("browser.safebrowsing.downloads.remote.enabled", false);
-
-/** MOZILLA ***/
-user_pref("permissions.default.desktop-notification", 2);
-user_pref("permissions.default.geo", 2);
-user_pref("permissions.manager.defaultsUrl", "");
-user_pref("webchannel.allowObject.urlWhitelist", "");
 
 /** TELEMETRY ***/
 user_pref("datareporting.policy.dataSubmissionEnabled", false);
@@ -193,10 +232,6 @@ user_pref("browser.display.focus_ring_width", 0);
 user_pref("layout.css.prefers-color-scheme.content-override", 2);
 user_pref("browser.privateWindowSeparation.enabled", false); // WINDOWS
 
-/** COOKIE BANNER HANDLING ***/
-user_pref("cookiebanners.service.mode", 1);
-user_pref("cookiebanners.service.mode.privateBrowsing", 1);
-
 /** FULLSCREEN NOTICE ***/
 user_pref("full-screen-api.transition-duration.enter", "0 0");
 user_pref("full-screen-api.transition-duration.leave", "0 0");
@@ -215,10 +250,6 @@ user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
 /** POCKET ***/
 user_pref("extensions.pocket.enabled", false);
 
-/** DOWNLOADS ***/
-user_pref("browser.download.always_ask_before_handling_new_types", true);
-user_pref("browser.download.manager.addToRecentDocs", false);
-
 /** PDF ***/
 user_pref("browser.download.open_pdf_attachments_inline", true);
 
@@ -234,10 +265,7 @@ user_pref("layout.word_select.eat_space_to_next_word", false);
 // visit https://github.com/yokoffing/Betterfox/wiki/Common-Overrides
 // visit https://github.com/yokoffing/Betterfox/wiki/Optional-Hardening
 // Enter your personal overrides below this line:
-user_pref("animatedFox.centeredTabs", true);
-user_pref("animatedFox.centeredUrl", true);
-user_pref("animatedFox.showTabCloseButton", true);
-user_pref("animatedFox.centeredUrl", true);
+
 /****************************************************************************
  * SECTION: SMOOTHFOX                                                       *
 ****************************************************************************/
