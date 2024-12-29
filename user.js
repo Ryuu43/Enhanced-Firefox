@@ -7,6 +7,79 @@
 * REVERT: https://voz.vn/goto/post?id=27496381
 ******/
 
+//Dark Mode native: remove /* and */ to activate
+
+//Dark Mode style 1
+/*
+user_pref("browser.active_color", "blue");
+user_pref("browser.display.background_color", "#3f3f3f");
+user_pref("browser.display.foreground_color", "#ffffff");
+user_pref("browser.anchor_color", "#ffcc99");
+user_pref("browser.visited_color", "#cc99ff");
+user_pref("browser.display.document_color_use", 2);
+user_pref("browser.display.use_system_colors", false);
+user_pref("layout.css.forced-colors.enabled", false);
+*/
+
+//Dark Mode style 2
+/*
+user_pref("browser.active_color", "blue");
+user_pref("browser.display.background_color", "#121212");
+user_pref("browser.display.foreground_color", "#ffffff");
+user_pref("browser.anchor_color", "#ffcc99");
+user_pref("browser.visited_color", "#cc99ff");
+user_pref("browser.display.document_color_use", 2);
+user_pref("browser.display.use_system_colors", false);
+user_pref("layout.css.forced-colors.enabled", false);
+*/
+
+//Dark Mode style Dark Reader
+/*
+user_pref("browser.active_color", "blue");
+user_pref("browser.display.background_color", "#232627");
+user_pref("browser.display.foreground_color", "#E4E3DF");
+user_pref("browser.anchor_color", "#92BBDE");
+user_pref("browser.visited_color", "#ED944F");
+user_pref("browser.display.document_color_use", 2);
+user_pref("browser.display.use_system_colors", false);
+user_pref("layout.css.forced-colors.enabled", false);
+*/
+
+//Gray Mode
+/*
+user_pref("browser.active_color", "blue");
+user_pref("browser.display.background_color", "#cccccc");
+user_pref("browser.display.foreground_color", "#000000");
+user_pref("browser.anchor_color", "#800040");
+user_pref("browser.visited_color", "#b93d00");
+user_pref("browser.display.document_color_use", 2);
+user_pref("browser.display.use_system_colors", false);
+user_pref("layout.css.forced-colors.enabled", false);
+*/
+
+//Dark Brown Mode
+/*
+user_pref("browser.active_color", "blue");
+user_pref("browser.display.background_color", "#3f3f3f");
+user_pref("browser.display.foreground_color", "#c9c9bb");
+user_pref("browser.anchor_color", "#dca3a3");
+user_pref("browser.visited_color", "#bba66f");
+user_pref("browser.display.document_color_use", 2);
+user_pref("browser.display.use_system_colors", false);
+user_pref("layout.css.forced-colors.enabled", false);
+*/
+
+//Light Mode
+/*
+user_pref("browser.active_color", "#EE0000");
+user_pref("browser.display.background_color", "#FFFFFF");
+user_pref("browser.display.foreground_color", "#FBFBFE");
+user_pref("browser.anchor_color", "#0000EE");
+user_pref("browser.visited_color", "#551A8B");
+user_pref("browser.display.document_color_use", 1);
+user_pref("browser.display.use_system_colors", true);
+user_pref("layout.css.forced-colors.enabled", true);
+*/
 //Tweaks
 //Instant start-up
 user_pref("browser.startup.preXulSkeletonUI", false);
@@ -79,7 +152,7 @@ user_pref("dom.script_loader.bytecode_cache.strategy", -1);
 user_pref("privacy.sanitize.useOldClearHistoryDialog", true);
 
 // Disable IPv6
-user_pref("network.dns.disableIPv6", true);
+//user_pref("network.dns.disableIPv6", true);
 
 // GoogleDNS
 // https://voz.vn/t/tong-hop-nhung-addon-chat-cho-firefox-pc-mobile.682181/post-24688026
@@ -141,12 +214,12 @@ user_pref("browser.cache.memory.max_entry_size", 512000);
 //user_pref("browser.sessionhistory.max_total_viewers", 0);
 
 // Enable Multi-Account Container
-user_pref("privacy.userContext.enabled", true); //enable Multi-Account Container
-user_pref("privacy.userContext.ui.enabled", true); //enable Multi-Account Container
+//user_pref("privacy.userContext.enabled", true); //enable Multi-Account Container
+//user_pref("privacy.userContext.ui.enabled", true); //enable Multi-Account Container
 
 // Enable Cookie Banner Protection
-//user_pref("cookiebanners.service.mode", 2);
-//user_pref("cookiebanners.service.mode.privateBrowsing", 2);
+user_pref("cookiebanners.service.mode", 2);
+user_pref("cookiebanners.service.mode.privateBrowsing", 2);
 
 // Disable Restricted Domains
 user_pref("extensions.webextensions.restrictedDomains", "");
